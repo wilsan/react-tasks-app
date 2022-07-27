@@ -22,7 +22,7 @@ function getTasks() {
             for (let task of tasks) {
                if (task.parent_task !== null) {
                   const index = mainTasks.findIndex(item => item.id === task.parent_task);
-                  mainTasks[index]['child_tasks'].push(task);
+                  (index !== -1) && mainTasks[index]['child_tasks']?.push(task);
                }
             }
 

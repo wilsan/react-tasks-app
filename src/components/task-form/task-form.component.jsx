@@ -33,9 +33,13 @@ function TaskForm({ parentTask }) {
          <label htmlFor="task-title" className="form-label">Title:</label>
          <input name="title" value={title} onChange={handleChange} type="text" className="form-control mb-2" id="task-title" />
          <label htmlFor="task-date" className="form-label">Due date:</label>
-         <div className='d-flex align-items-center'>
-            <input name="due" value={due} onChange={handleChange} type="date" className="form-control w-25" id="task-date" />
-            <button type="submit" className="btn btn-primary w-25 ms-auto">{parentTask ? 'Add Child Task' : 'Add'}</button>
+         <div className="row justify-content-between">
+            <div className="col-6 col-sm-4">
+               <input name="due" value={due} onChange={handleChange} type="date" className="form-control" id="task-date" />
+            </div>
+            <div className="col-6 col-sm-4 d-flex">
+               <button type="submit" className="btn btn-primary flex-fill">{parentTask ? 'Add Child Task' : 'Add'}</button>
+            </div>
          </div>
       </form>
    );
