@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 
+import { useContext } from 'react';
+
+import Header from './components/header/header.component';
+import TaskList from './components/task-list/task-list.component';
+import Spinner from './components/spinner/spinner.component';
+
+import { TaskContext } from './contexts/task.context';
+
 function App() {
+  const { isLoading } = useContext(TaskContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container-fluid">
+      <Header />
+      {isLoading ? <Spinner /> : <TaskList />}
     </div>
   );
 }

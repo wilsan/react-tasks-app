@@ -1,0 +1,17 @@
+.dropdown-icon {
+   min-height: 24px;
+   min-width: 24px;
+}
+
+.add-icon {
+   min-height: 24px;
+   min-width: 24px;
+}
+
+.icon-container {
+   min-width: 12%
+}
+
+.date {
+   font-size: 0.8rem;
+}
